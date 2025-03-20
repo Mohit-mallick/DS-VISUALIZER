@@ -67,7 +67,7 @@ export function useBinaryTree() {
       
       setTimeout(() => {
         setHighlightedNodes(prev => prev.filter(id => id !== nodeId))
-      }, 1000)
+      }, 800)
     }
 
     const wait = () => new Promise(resolve => setTimeout(resolve, 800))

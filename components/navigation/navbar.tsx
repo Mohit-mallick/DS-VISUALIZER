@@ -1,6 +1,7 @@
 "use client";
-import { BrainCircuit, Github, Menu } from "lucide-react";
+import { BrainCircuit, Github, Linkedin, Menu } from "lucide-react";
 import React from "react";
+import { motion } from "framer-motion";
 import {
   Sheet,
   SheetContent,
@@ -148,7 +149,30 @@ export const Navbar = () => {
 
             <SheetFooter className="flex-col sm:flex-col justify-start items-start">
               <Separator className="mb-2" />
-              <ModeToggle />
+              <div className="flex items-center gap-2 mb-2">
+                <ModeToggle />
+                <Button asChild size="sm" variant="ghost" aria-label="View on LinkedIn">
+                  <Link
+                    aria-label="View on LinkedIn"
+                    href="https://www.linkedin.com/in/mohitmallickwz"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <Linkedin className="size-5" />
+                  </Link>
+                </Button>
+              </div>
+              <div className="flex items-center gap-1 text-sm">
+                <span className="text-muted-foreground">Built by</span>
+                <Link 
+                  href="https://www.linkedin.com/in/mohitmallickwz" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="font-bold bg-gradient-to-r from-blue-500 to-purple-600 bg-clip-text text-transparent hover:from-purple-600 hover:to-blue-500 transition-all duration-300"
+                >
+                  Mohit Mallick
+                </Link>
+              </div>
             </SheetFooter>
           </SheetContent>
         </Sheet>
@@ -193,15 +217,37 @@ export const Navbar = () => {
         </NavigationMenuList>
       </NavigationMenu>
 
-      <div className="hidden lg:flex items-center gap-2">
-        <ModeToggle />
-        <Button asChild size="sm" variant="ghost" aria-label="View on GitHub">
-          <Link
-            aria-label="View on GitHub"
-            href="https://github.com/yourusername/ds-visualizer"
-            target="_blank"
+      <div className="hidden lg:flex items-center gap-4">
+        <motion.div 
+          initial={{ opacity: 0, y: 5 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="flex items-center gap-1 mr-2"
+        >
+          <span className="text-sm text-muted-foreground">Built by</span>
+          <motion.div
+            whileHover={{ scale: 1.05 }}
+            transition={{ type: "spring", stiffness: 400, damping: 10 }}
           >
-            <Github className="size-5" />
+            <Link 
+              href="https://www.linkedin.com/in/mohitmallickwz" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-sm font-bold bg-gradient-to-r from-blue-500 to-purple-600 bg-clip-text text-transparent hover:from-purple-600 hover:to-blue-500 transition-all duration-300"
+            >
+              Mohit Mallick
+            </Link>
+          </motion.div>
+        </motion.div>
+        <ModeToggle />
+        <Button asChild size="sm" variant="ghost" aria-label="View on LinkedIn">
+          <Link
+            aria-label="View on LinkedIn"
+            href="https://www.linkedin.com/in/mohitmallickwz"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Linkedin className="size-5" />
           </Link>
         </Button>
       </div>

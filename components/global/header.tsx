@@ -2,8 +2,11 @@
 
 import * as React from "react"
 import Link from "next/link"
-import { BrainCircuit, Github } from "lucide-react"
+import { Linkedin } from "lucide-react"
+import Image from "next/image"
 import { ModeToggle } from "@/components/global/mode-toggle"
+import { ChatInterface } from "@/components/global/chat-interface"
+import { ChatIcon } from "@/components/global/chat-icon"
 import {
   NavigationMenu,
   NavigationMenuItem,
@@ -33,12 +36,14 @@ const navigationItems = [
 ]
 
 export function Header() {
+  const [isChatOpen, setIsChatOpen] = React.useState(false);
+
   return (
     <header className="supports-backdrop-blur:bg-background/90 sticky top-0 z-40 w-full bg-background/60 backdrop-blur-lg border-b">
       <div className="flex h-16 items-center justify-between px-4 max-w-7xl mx-auto">
         <div className="flex items-center gap-2">
-          <BrainCircuit className="h-6 w-6" />
-          <span className="font-semibold">Data Structure Visualizer</span>
+          <Image src="/gear-code.svg" alt="Logo" width={32} height={32} className="text-foreground" />
+          <span className="font-semibold text-lg">DS Visualizer</span>
         </div>
         <div className="hidden md:block">
           <NavigationMenu>
@@ -61,16 +66,18 @@ export function Header() {
         <div className="flex items-center space-x-4">
           <Button asChild size="sm" variant="ghost">
             <Link
-              href="https://github.com/yourusername/data-structure-visualizer"
+              href="https://www.linkedin.com/in/mohitmallickwz"
               target="_blank"
               rel="noopener noreferrer"
             >
-              <Github className="h-5 w-5" />
+              <Linkedin className="h-5 w-5" />
             </Link>
           </Button>
+          <ChatIcon onClick={() => setIsChatOpen(!isChatOpen)} />
           <ModeToggle />
         </div>
       </div>
     </header>
+      
   )
 }

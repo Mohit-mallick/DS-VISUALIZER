@@ -113,50 +113,21 @@ Node* insert(Node* node, int value) {
 }
 ```
 
-## Traversal Operations
+## Time Complexity
 
-```c
-// Pre-order traversal
-void preOrder(Node* root) {
-    if (root != NULL) {
-        printf("%d ", root->value);
-        preOrder(root->left);
-        preOrder(root->right);
-    }
-}
+- Insertion: O(log n)
+- Deletion: O(log n)
+- Search: O(log n)
 
-// In-order traversal
-void inOrder(Node* root) {
-    if (root != NULL) {
-        inOrder(root->left);
-        printf("%d ", root->value);
-        inOrder(root->right);
-    }
-}
+Where n is the number of nodes in the AVL tree.
 
-// Post-order traversal
-void postOrder(Node* root) {
-    if (root != NULL) {
-        postOrder(root->left);
-        postOrder(root->right);
-        printf("%d ", root->value);
-    }
-}
-```
+## Space Complexity
 
-## Properties
-- For each node, the heights of its left and right subtrees differ by at most 1
-- All operations (insertion, deletion, search) take O(log n) time
-- Balance factor = height(left subtree) - height(right subtree)
-- Balance factor must be -1, 0, or 1 for all nodes
-
-## Rotations
-- Left Rotation: Used when right subtree becomes higher
-- Right Rotation: Used when left subtree becomes higher
-- Left-Right Rotation: Combination used for more complex imbalances
-- Right-Left Rotation: Combination used for more complex imbalances
+O(n) where n is the number of nodes in the AVL tree.
 
 ## Applications
-- Databases where frequent insertions and deletions occur
-- Memory management systems
-- File systems requiring balanced tree structures
+
+1. Database indexing
+2. Memory management
+3. File system organization
+4. Network routing tables

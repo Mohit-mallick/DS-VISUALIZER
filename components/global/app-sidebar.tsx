@@ -1,6 +1,8 @@
 "use client"
 
-import { Binary, Home, Database, BrainCircuit, TreePine, List, SquareStack, SquareChevronLeft, Equal, MessageSquare, X, Hash, ArrowRightLeft } from "lucide-react"
+import { Binary, Home, Database, TreePine, List, SquareStack, SquareChevronLeft, Equal, MessageSquare, X, Hash, ArrowRightLeft, Linkedin } from "lucide-react"
+import Image from "next/image"
+import { motion } from "framer-motion"
 import {
   Sidebar,
   SidebarContent,
@@ -102,8 +104,13 @@ export function AppSidebar() {
     <Sidebar>
       <SidebarHeader>
         <div className="px-6 py-4 border-b flex items-center gap-2">
-          <BrainCircuit className="h-6 w-6" />
-          <h1 className="text-sm font-semibold">Data Structure Visualizer</h1>
+          <motion.div
+            whileHover={{ rotate: 180 }}
+            transition={{ duration: 0.3, ease: "easeInOut" }}
+          >
+            <Image src="/gear-code.svg" alt="Logo" width={32} height={32} className="text-foreground" />
+          </motion.div>
+          <h1 className="text-lg font-semibold">DS Visualizer</h1>
         </div>
       </SidebarHeader>
       <SidebarContent>
@@ -127,16 +134,22 @@ export function AppSidebar() {
           }))}
         />
       </SidebarContent>
-      {/* <SidebarFooter>
-        <NavUser
-          user={{
-            name: "Guest User",
-            email: "guest@example.com",
-            avatar: "",
-          }}
-        />
-      </SidebarFooter> */}
+      <SidebarFooter>
+        <div className="px-6 py-4 border-t flex flex-col items-start gap-2">
+          <div className="flex items-center gap-1">
+            <span className="text-xs text-muted-foreground">Built by</span>
+            <a 
+              href="https://www.linkedin.com/in/mohitmallickwz" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-xs font-bold bg-gradient-to-r from-blue-500 to-purple-600 bg-clip-text text-transparent hover:from-purple-600 hover:to-blue-500 transition-all duration-300"
+            >
+              Mohit Mallick
+            </a>
+          </div>
+        </div>
+      </SidebarFooter>
       <SidebarRail />
     </Sidebar>
   )
-} 
+}

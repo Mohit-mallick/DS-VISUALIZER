@@ -1,5 +1,6 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { BrainCircuit, Binary, TreePine, Box, List, ArrowLeftRight, Calculator, MessageSquare, Hash, ArrowRightLeft } from "lucide-react"
+import { Binary, TreePine, Box, List, ArrowLeftRight, Calculator, MessageSquare, Hash, ArrowRightLeft } from "lucide-react"
+import Image from "next/image"
 import Link from "next/link"
 
 const sections = {
@@ -80,7 +81,7 @@ export default function HomePage() {
     <div className="container py-8 max-w-7xl mx-auto">
       <div className="flex flex-col items-center text-center mb-12">
         <div className="flex items-center gap-3 mb-6">
-          <BrainCircuit className="h-10 w-10" />
+          <Image src="/gear-code.svg" alt="Logo" width={40} height={40} className="text-foreground" />
           <h1 className="text-3xl font-bold tracking-tight">Data Structure Visualizer</h1>
         </div>
         <p className="text-muted-foreground text-lg max-w-2xl">

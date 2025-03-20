@@ -7,8 +7,10 @@ import { MarkdownContent } from "@/components/shared/markdown-content"
 import { useAVLTree } from "@/hooks/use-avl-tree"
 import { AVLTreeAnalysis } from "./avl-tree-analysis"
 
+import { MDXProps } from 'mdx/types'
+
 interface AVLTreeVisualizerProps {
-  content: React.ReactNode
+  content: (props: MDXProps) => JSX.Element
 }
 
 export function AVLTreeVisualizer({ content }: AVLTreeVisualizerProps) {
@@ -86,4 +88,4 @@ export function AVLTreeVisualizer({ content }: AVLTreeVisualizerProps) {
       </Tabs>
     </div>
   )
-} 
+}

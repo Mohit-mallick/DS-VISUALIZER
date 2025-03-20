@@ -31,14 +31,9 @@ export const Hero = () => (
               Interactive tool for learning and understanding data structures through visual animations and step-by-step operations.
             </p>
           </div>
-          <div className="flex flex-row gap-4">
-            <Link href="https://github.com/yourusername/ds-visualizer">
-              <Button className="gap-4" variant="outline">
-                View on GitHub <Github className="w-4 h-4" />
-              </Button>
-            </Link>
+          <div className="flex flex-row gap-4 mt-4 justify-start -translate-y-4">
             <Link href="/visualizer">
-              <RainbowButton className="w-full">
+              <RainbowButton className="w-48">
                 Visualizer <MoveRight className="hidden sm:block w-4 h-4" />
               </RainbowButton>
             </Link>
@@ -56,4 +51,4 @@ export const Hero = () => (
       </div>
     </div>
   </div>
-); 
+);

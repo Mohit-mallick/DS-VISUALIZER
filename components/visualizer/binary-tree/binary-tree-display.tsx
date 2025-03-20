@@ -41,10 +41,10 @@ export function BinaryTreeDisplay({ tree, highlightedNodes }: BinaryTreeDisplayP
       setTimeout(() => {
         reactFlowInstance.fitView({
           padding: 0.2,
-          duration: 400,
+          duration: 600,
           maxZoom: 1.5,
         })
-      }, 50)
+      }, 100)
     }
   }, [reactFlowInstance])
 
